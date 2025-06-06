@@ -1,5 +1,6 @@
 package com.swd.smk.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
@@ -12,6 +13,6 @@ public class MemberBadgeDTO {
     private BadgeDTO badge;
     private String badgeName;
     private String description;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private String dateEarned;
-
 }

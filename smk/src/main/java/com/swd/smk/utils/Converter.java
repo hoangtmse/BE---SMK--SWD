@@ -53,7 +53,6 @@ public class Converter {
         dto.setFullName(model.getFullName());
         dto.setUsername(model.getUsernameField());
         dto.setEmail(model.getEmail());
-        dto.setPassword(model.getPassword());
         dto.setPhoneNumber(model.getPhoneNumber());
         dto.setDob(model.getDob());
         dto.setGender(model.getGender());
@@ -76,6 +75,8 @@ public class Converter {
         dto.setPrice(model.getPrice());
         dto.setDescription(model.getDescription());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
@@ -83,7 +84,6 @@ public class Converter {
         AdminDTO dto = new AdminDTO();
         dto.setId(model.getId());
         dto.setUsername(model.getUsername());
-        dto.setPassword(model.getPassword());
         dto.setRole(model.getRole());
         dto.setStatus(model.getStatus());
         dto.setDateCreated(model.getDateCreated());
@@ -112,7 +112,6 @@ public class Converter {
         dto.setExpertise(model.getExpertise());
         dto.setStatus(model.getStatus());
         dto.setRole(model.getRole());
-        dto.setPassword(model.getPassword());
         dto.setPhoneNumber(model.getPhoneNumber());
         dto.setGender(model.getGender());
         dto.setDob(model.getDob());
@@ -134,6 +133,8 @@ public class Converter {
         dto.setConsultationDate(model.getConsultationDate());
         dto.setNotes(model.getNotes());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
@@ -147,6 +148,8 @@ public class Converter {
         dto.setRating(model.getRating());
         dto.setFeedbackDate(model.getFeedbackDate());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
@@ -173,6 +176,8 @@ public class Converter {
         dto.setStart_Date(model.getStart_Date());
         dto.setExpected_End_Date(model.getExpected_End_Date());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
@@ -185,6 +190,8 @@ public class Converter {
         dto.setContent(model.getContent());
         dto.setPostDate(model.getPostDate());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
@@ -197,7 +204,8 @@ public class Converter {
         dto.setDaysSmokeFree(model.getDaysSmokeFree());
         dto.setMoneySaved(model.getMoneySaved());
         dto.setHealthImprovement(model.getHealthImprovement());
-        dto.setUpdateDate(model.getUpdateDate());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         dto.setStatus(model.getStatus());
         return dto;
     }
@@ -213,6 +221,8 @@ public class Converter {
         dto.setCost(model.getCost());
         dto.setLogDate(model.getLogDate());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 }

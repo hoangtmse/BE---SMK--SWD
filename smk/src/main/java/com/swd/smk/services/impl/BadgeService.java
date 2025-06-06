@@ -68,6 +68,8 @@ public class BadgeService implements IBadgeService {
             badge.setDateUpdated(LocalDate.now());
 
             badgeRepository.save(badge);
+
+            response.setBadge(Converter.convertBadgeToDTO(badge));
             response.setStatusCode(200);
             response.setMessage("Badge updated successfully");
         } catch (OurException e) {

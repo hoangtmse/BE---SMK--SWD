@@ -1,5 +1,6 @@
 package com.swd.smk.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.swd.smk.enums.Role;
 import com.swd.smk.enums.Status;
@@ -31,7 +32,9 @@ public class MemberDTO {
     private List<FeedBackDTO> feedbacks;
     private List<PostDTO> posts;
     private List<ConsultationDTO> consultations;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate dateCreated;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate dateUpdated;
 }
 
