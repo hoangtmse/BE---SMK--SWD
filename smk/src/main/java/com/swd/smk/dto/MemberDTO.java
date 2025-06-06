@@ -26,10 +26,12 @@ public class MemberDTO {
     private List<PlanDTO> plans;
     private List<SmokingLogDTO> smokingLogs;
     private List<ProgressDTO> progresses;
-    private List<BadgeDTO> badges;
+    private List<MemberBadgeDTO> memberBadges;
     private List<NotificationDTO> notifications;
     private List<FeedBackDTO> feedbacks;
     private List<PostDTO> posts;
     private List<ConsultationDTO> consultations;
+    private LocalDate dateCreated;
+    private LocalDate dateUpdated;
 }
 

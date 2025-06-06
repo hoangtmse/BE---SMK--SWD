@@ -17,6 +17,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,6 +45,8 @@ public class AdminService implements IAdminService {
             admin.setPassword(encodedPassword);
             admin.setRole(adminRequest.getRole() != null ? adminRequest.getRole() : Role.ADMIN);
             admin.setStatus(Status.ACTIVE);
+            admin.setDateCreated(LocalDate.now());
+            admin.setDateUpdated(LocalDate.now());
             adminRepository.save(admin);
             response.setStatusCode(200);
             response.setMessage("Registered successfully");
@@ -153,6 +156,7 @@ public class AdminService implements IAdminService {
                 }
                 admin.setUsername(adminDTO.getUsername().trim());
             }
+            admin.setDateUpdated(LocalDate.now());
             if (adminDTO.getPassword() != null) admin.setPassword(passwordEncoder.encode(adminDTO.getPassword().trim()));
 
             adminRepository.save(admin);

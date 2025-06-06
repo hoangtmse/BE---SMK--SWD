@@ -5,6 +5,8 @@ import com.swd.smk.enums.Role;
 import com.swd.smk.enums.Status;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AdminDTO {
@@ -13,4 +15,6 @@ public class AdminDTO {
     private String password;
     private Role role;
     private Status status;
+    private LocalDate dateCreated;
+    private LocalDate dateUpdated;
 }

@@ -14,6 +14,9 @@ public class ConsultationDTO {
     private MemberDTO member;
     private CoachDTO coach;
     private LocalDateTime consultationDate;
+    private Float price;
     private String notes;
     private Status status;
+    private LocalDateTime dateCreated;
+    private LocalDateTime dateUpdated;
 }

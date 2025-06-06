@@ -2,6 +2,7 @@ package com.swd.smk.model;
 
 import com.swd.smk.enums.Role;
 import com.swd.smk.enums.Status;
+import com.swd.smk.model.jointable.MemberBadge;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
@@ -44,6 +45,12 @@ public class Member implements UserDetails {
     @Column(nullable = false)
     private LocalDate joinDate;
 
+    @Column(name = "date_created")
+    private LocalDate dateCreated;
+
+    @Column(name = "date_updated")
+    private LocalDate dateUpdated;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
@@ -66,7 +73,7 @@ public class Member implements UserDetails {
     private List<Progress> progresses;
 
     @OneToMany(mappedBy = "member")
-    private List<Badge> badges;
+    private List<MemberBadge> memberBadges;
 
     @OneToMany(mappedBy = "member")
     private List<Notification> notifications;

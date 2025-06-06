@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -33,6 +34,11 @@ public class Admin implements UserDetails {
     @Column(name = "status")
     private Status status;
 
+    @Column(name = "date_created")
+    private LocalDate dateCreated;
+
+    @Column(name = "date_updated")
+    private LocalDate dateUpdated;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
