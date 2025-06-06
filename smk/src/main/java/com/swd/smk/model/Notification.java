@@ -4,6 +4,7 @@ import com.swd.smk.enums.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity

@@ -1,5 +1,6 @@
 package com.swd.smk.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.swd.smk.enums.Status;
 import lombok.Data;
@@ -15,6 +16,9 @@ public class ProgressDTO {
     private Integer daysSmokeFree;
     private Double moneySaved;
     private String healthImprovement;
-    private LocalDate updateDate;
     private Status status;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dateCreated;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dateUpdated;
 }

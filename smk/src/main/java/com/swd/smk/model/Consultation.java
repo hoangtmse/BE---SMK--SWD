@@ -29,8 +29,6 @@ public class Consultation {
     @Column(columnDefinition = "TEXT")
     private String notes;
 
-    private Float price;
-
     @Column(name = "date_created")
     private LocalDate dateCreated;
 

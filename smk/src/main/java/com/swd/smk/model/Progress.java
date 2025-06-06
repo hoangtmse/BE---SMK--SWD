@@ -27,8 +27,11 @@ public class Progress {
     @Column(name = "Health_Improvement")
     private String healthImprovement;
 
-    @Column(name = "Update_Date")
-    private LocalDate updateDate;
+    @Column(name = "date_created")
+    private LocalDate dateCreated;
+
+    @Column(name = "date_updated")
+    private LocalDate dateUpdated;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
