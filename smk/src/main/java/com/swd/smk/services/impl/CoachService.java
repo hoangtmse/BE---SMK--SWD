@@ -17,6 +17,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,6 +71,8 @@ public class CoachService implements ICoachService {
             coach.setGender(coachRequest.getGender());
             coach.setRole(Role.COACH);
             coach.setStatus(Status.ACTIVE);
+            coach.setDateCreated(LocalDate.now());
+            coach.setDateUpdated(LocalDate.now());
             coachRepository.save(coach);
             response.setStatusCode(200);
             response.setMessage("Registered successfully");
@@ -200,6 +203,7 @@ public class CoachService implements ICoachService {
                 coach.setDob(coachDTO.getDob());
             }
             if (coachDTO.getGender() != null) coach.setGender(coachDTO.getGender());
+            coach.setDateUpdated(LocalDate.now());
             coachRepository.save(coach);
             response.setStatusCode(200);
             response.setMessage("Updated successfully");

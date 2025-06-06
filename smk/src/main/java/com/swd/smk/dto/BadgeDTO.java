@@ -5,14 +5,17 @@ import com.swd.smk.enums.Status;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BadgeDTO {
 
     private Long id;
-    private MemberDTO member;
     private String badgeName;
-    private LocalDate earnedDate;
+    private String description;
+    private List<MemberBadgeDTO> memberBadges;
+    private LocalDate dateCreated;
+    private LocalDate dateUpdated;
     private Status status;
 }

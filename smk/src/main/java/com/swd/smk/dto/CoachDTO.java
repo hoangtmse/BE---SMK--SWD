@@ -24,5 +24,7 @@ public class CoachDTO {
     private Role role;
     private List<ConsultationDTO> Consultations;
     private String password;
+    private LocalDate dateCreated;
+    private LocalDate dateUpdated;
 }
 

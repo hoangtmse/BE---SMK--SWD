@@ -66,6 +66,8 @@ public class MemberService implements IMemberService {
             member.setPhoneNumber(memberRequest.getPhoneNumber().trim());
             member.setRole(Role.MEMBER);
             member.setStatus(Status.ACTIVE);
+            member.setDateCreated(LocalDate.now());
+            member.setDateUpdated(LocalDate.now());
             member.setJoinDate(LocalDate.now());
             member.setDob(memberRequest.getDob());
             member.setGender(memberRequest.getGender());
@@ -216,6 +218,8 @@ public class MemberService implements IMemberService {
             if (memberDTO.getGender() != null) {
                 member.setGender(memberDTO.getGender());
             }
+            member.setDateUpdated(LocalDate.now());
+
             // Không cho phép cập nhật role và status qua API này
             memberRepository.save(member);
             response.setStatusCode(200);

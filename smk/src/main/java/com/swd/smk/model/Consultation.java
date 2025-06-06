@@ -4,6 +4,7 @@ import com.swd.smk.enums.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -27,6 +28,14 @@ public class Consultation {
 
     @Column(columnDefinition = "TEXT")
     private String notes;
+
+    private Float price;
+
+    @Column(name = "date_created")
+    private LocalDate dateCreated;
+
+    @Column(name = "date_updated")
+    private LocalDate dateUpdated;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

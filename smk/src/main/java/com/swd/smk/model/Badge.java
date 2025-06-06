@@ -1,10 +1,12 @@
 package com.swd.smk.model;
 
 import com.swd.smk.enums.Status;
+import com.swd.smk.model.jointable.MemberBadge;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "badge")
@@ -14,15 +16,19 @@ public class Badge {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "Member_ID", nullable = false)
-    private Member member;
+    @OneToMany(mappedBy = "badge")
+    private List<MemberBadge> memberBadges;
 
     @Column(name = "Badge_Name", nullable = false, length = 100)
     private String badgeName;
 
-    @Column(name = "Earned_Date")
-    private LocalDate earnedDate;
+    private String description;
+
+    @Column(name = "Date_Created")
+    private LocalDate dateCreated;
+
+    @Column(name = "Date_Updated")
+    private  LocalDate dateUpdated;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

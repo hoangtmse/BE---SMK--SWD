@@ -12,6 +12,7 @@ import com.swd.smk.dto.PlanDTO;
 import com.swd.smk.dto.PostDTO;
 import com.swd.smk.dto.ProgressDTO;
 import com.swd.smk.dto.SmokingLogDTO;
+import com.swd.smk.dto.MemberBadgeDTO;
 import com.swd.smk.model.Member;
 import com.swd.smk.model.MembershipPackage;
 import com.swd.smk.model.Admin;
@@ -24,8 +25,27 @@ import com.swd.smk.model.Plan;
 import com.swd.smk.model.Post;
 import com.swd.smk.model.Progress;
 import com.swd.smk.model.SmokingLog;
+import com.swd.smk.model.jointable.MemberBadge;
+import java.util.stream.Collectors;
 
 public class Converter {
+
+    public static MemberBadgeDTO convertMemberBadgeToDTO(MemberBadge model) {
+        if (model == null) return null;
+        MemberBadgeDTO dto = new MemberBadgeDTO();
+        dto.setId(model.getId());
+        dto.setMember(convertMemberToDTO(model.getMember()));
+        dto.setBadge(null); // Tránh vòng lặp vô hạn, chỉ set nếu cần
+        dto.setBadgeName(model.getBadge().getBadgeName());
+        dto.setDescription(model.getBadge().getDescription());
+        dto.setDateEarned(model.getEarnedDate() != null ? model.getEarnedDate().toString() : null);
+        return dto;
+    }
+
+    public static java.util.List<MemberBadgeDTO> convertMemberBadgeListToDTO(java.util.List<MemberBadge> list) {
+        if (list == null) return null;
+        return list.stream().map(Converter::convertMemberBadgeToDTO).collect(Collectors.toList());
+    }
 
     public static MemberDTO convertMemberToDTO(Member model){
         MemberDTO dto = new MemberDTO();
@@ -43,7 +63,9 @@ public class Converter {
         if (model.getMembership_Package() != null) {
             dto.setMembership_Package(convertMemberShipPackageDTO(model.getMembership_Package()));
         }
-
+        dto.setMemberBadges(convertMemberBadgeListToDTO(model.getMemberBadges()));
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
@@ -64,18 +86,20 @@ public class Converter {
         dto.setPassword(model.getPassword());
         dto.setRole(model.getRole());
         dto.setStatus(model.getStatus());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         return dto;
     }
 
     public static BadgeDTO convertBadgeToDTO(Badge model) {
         BadgeDTO dto = new BadgeDTO();
         dto.setId(model.getId());
-        if (model.getMember() != null) {
-            dto.setMember(convertMemberToDTO(model.getMember()));
-        }
         dto.setBadgeName(model.getBadgeName());
-        dto.setEarnedDate(model.getEarnedDate());
+        dto.setDescription(model.getDescription());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         dto.setStatus(model.getStatus());
+        dto.setMemberBadges(convertMemberBadgeListToDTO(model.getMemberBadges()));
         return dto;
     }
 
@@ -92,6 +116,8 @@ public class Converter {
         dto.setPhoneNumber(model.getPhoneNumber());
         dto.setGender(model.getGender());
         dto.setDob(model.getDob());
+        dto.setDateCreated(model.getDateCreated());
+        dto.setDateUpdated(model.getDateUpdated());
         // Nếu cần convert Consultations, bổ sung sau
         return dto;
     }
