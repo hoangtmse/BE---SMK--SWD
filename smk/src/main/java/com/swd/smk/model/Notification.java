@@ -20,6 +20,9 @@ public class Notification {
     private Member member;
 
     @Column(nullable = false, columnDefinition = "TEXT")
+    private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String message;
 
     @Column(name = "Sent_Date")

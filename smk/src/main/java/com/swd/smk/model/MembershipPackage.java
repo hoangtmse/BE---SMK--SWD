@@ -16,7 +16,7 @@ public class MembershipPackage {
     private Long id;
 
     @Column(nullable = false)
-    private String package_Name;
+    private String packageName;
 
     @Column(nullable = false)
     private Double price;
