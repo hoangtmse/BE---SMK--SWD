@@ -92,7 +92,7 @@ public class ConsultationService implements IConsultationService {
             response.setStatusCode(200);
             response.setMessage("Consultation updated successfully");
         } catch (OurException e) {
-            response.setStatusCode(404);
+            response.setStatusCode(400);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setStatusCode(500);
@@ -116,7 +116,7 @@ public class ConsultationService implements IConsultationService {
             response.setStatusCode(200);
             response.setMessage("Consultation deleted successfully");
         } catch (OurException e) {
-            response.setStatusCode(404);
+            response.setStatusCode(400);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setStatusCode(500);
@@ -139,7 +139,7 @@ public class ConsultationService implements IConsultationService {
             response.setMessage("Consultation fetched successfully");
             response.setConsultation(dto);
         } catch (OurException e) {
-            response.setStatusCode(404);
+            response.setStatusCode(400);
             response.setMessage(e.getMessage());
         } catch (Exception e) {
             response.setStatusCode(500);
