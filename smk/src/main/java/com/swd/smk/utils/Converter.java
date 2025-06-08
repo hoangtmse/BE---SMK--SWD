@@ -71,7 +71,7 @@ public class Converter {
     public static MemberShipPackageDTO convertMemberShipPackageDTO(MembershipPackage model){
         MemberShipPackageDTO dto = new MemberShipPackageDTO();
         dto.setId(model.getId());
-        dto.setPackage_Name(model.getPackage_Name());
+        dto.setPackageName(model.getPackageName());
         dto.setPrice(model.getPrice());
         dto.setDescription(model.getDescription());
         dto.setStatus(model.getStatus());
@@ -159,6 +159,7 @@ public class Converter {
         if (model.getMember() != null) {
             dto.setMember(convertMemberToDTO(model.getMember()));
         }
+        dto.setTitle(model.getTitle());
         dto.setMessage(model.getMessage());
         dto.setSentDate(model.getSentDate());
         dto.setStatus(model.getStatus());

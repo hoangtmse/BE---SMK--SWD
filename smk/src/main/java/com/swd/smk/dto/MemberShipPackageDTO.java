@@ -13,7 +13,7 @@ import java.util.List;
 public class MemberShipPackageDTO {
 
     private Long id;
-    private String package_Name;
+    private String packageName;
     private Double price;
     private String description;
     private List<MemberDTO> Members;

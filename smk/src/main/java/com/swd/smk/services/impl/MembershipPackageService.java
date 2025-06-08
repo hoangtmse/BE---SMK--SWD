@@ -77,7 +77,7 @@ public class MembershipPackageService implements IMembershipPackage {
 
             // Check if the package name is provided
             MembershipPackage membershipPackage = new MembershipPackage();
-            membershipPackage.setPackage_Name(memberShipPackageDTO.getPackage_Name());
+            membershipPackage.setPackageName(memberShipPackageDTO.getPackageName());
             membershipPackage.setPrice(memberShipPackageDTO.getPrice());
             membershipPackage.setStatus(Status.ACTIVE);
             membershipPackage.setDescription(memberShipPackageDTO.getDescription());
@@ -107,7 +107,7 @@ public class MembershipPackageService implements IMembershipPackage {
                 throw new OurException("Membership package not found");
             }
             MembershipPackage membershipPackage = packageOpt.get();
-            if (memberShipPackageDTO.getPackage_Name() != null) membershipPackage.setPackage_Name(memberShipPackageDTO.getPackage_Name());
+            if (memberShipPackageDTO.getPackageName() != null) membershipPackage.setPackageName(memberShipPackageDTO.getPackageName());
             if(memberShipPackageDTO.getPrice() != null) membershipPackage.setPrice(memberShipPackageDTO.getPrice());
             if (memberShipPackageDTO.getDescription() != null)membershipPackage.setDescription(memberShipPackageDTO.getDescription());
             membershipPackage.setStatus(Status.ACTIVE);

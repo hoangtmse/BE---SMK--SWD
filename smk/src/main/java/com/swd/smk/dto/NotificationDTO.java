@@ -11,10 +11,11 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class NotificationDTO {
     private Long id;
+    private Long memberId;
     private MemberDTO member;
     private String message;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime sentDate;
     private Status status;
-
+    private String title;
 }
