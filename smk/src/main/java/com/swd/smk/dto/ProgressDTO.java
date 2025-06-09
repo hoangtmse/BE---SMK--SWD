@@ -12,6 +12,7 @@ import java.time.LocalDate;
 public class ProgressDTO {
 
     private Long progressId;
+    private Long memberId;
     private MemberDTO member;
     private Integer daysSmokeFree;
     private Double moneySaved;

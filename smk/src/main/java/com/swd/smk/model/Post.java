@@ -19,7 +19,8 @@ public class Post {
     @JoinColumn(name = "Member_ID", nullable = false)
     private Member member;
 
-    @Column(nullable = false)
+    private String title;
+
     private String content;
 
     @Column(name = "Post_Date")
