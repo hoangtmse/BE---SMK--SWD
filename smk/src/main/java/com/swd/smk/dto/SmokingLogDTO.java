@@ -12,6 +12,7 @@ import java.time.LocalDate;
 public class SmokingLogDTO {
 
     private Long id;
+    private Long memberId;
     private MemberDTO member;
     private Integer cigarettesPerDay;
     private String frequency;

@@ -22,9 +22,9 @@ public class Plan {
 
     private String phases;
 
-    private LocalDate Start_Date;
+    private LocalDate StartDate;
 
-    private LocalDate Expected_End_Date;
+    private LocalDate ExpectedEndDate;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")

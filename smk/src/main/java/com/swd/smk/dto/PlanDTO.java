@@ -12,13 +12,14 @@ import java.time.LocalDate;
 public class PlanDTO {
 
     private Long id;
+    private Long memberId;
     private MemberDTO member;
     private String reason;
     private String phases;
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate Start_Date;
+    private LocalDate StartDate;
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private LocalDate Expected_End_Date;
+    private LocalDate ExpectedEndDate;
     private Status status;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate dateCreated;

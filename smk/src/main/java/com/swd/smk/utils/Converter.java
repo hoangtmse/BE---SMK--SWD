@@ -174,8 +174,8 @@ public class Converter {
         }
         dto.setReason(model.getReason());
         dto.setPhases(model.getPhases());
-        dto.setStart_Date(model.getStart_Date());
-        dto.setExpected_End_Date(model.getExpected_End_Date());
+        dto.setStartDate(model.getStartDate());
+        dto.setExpectedEndDate(model.getExpectedEndDate());
         dto.setStatus(model.getStatus());
         dto.setDateCreated(model.getDateCreated());
         dto.setDateUpdated(model.getDateUpdated());
@@ -188,6 +188,7 @@ public class Converter {
         if (model.getMember() != null) {
             dto.setMember(convertMemberToDTO(model.getMember()));
         }
+        dto.setTitle(model.getTitle());
         dto.setContent(model.getContent());
         dto.setPostDate(model.getPostDate());
         dto.setStatus(model.getStatus());
